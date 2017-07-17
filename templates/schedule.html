@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Schedule</h1>
+{% for entry in schedule %}
+<div>
+    <h3>{{ entry.date }}</h3>
+    <ul>
+    {% for chore in entry.chores %}
+        <li>
+            <a href="{% url 'chore' chore.id %}">{{ chore.name }}</a> ({{ chore.minutes }} minutes)
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endfor %}
+{% endblock %}

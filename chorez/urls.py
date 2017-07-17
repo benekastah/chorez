@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic import RedirectView
 
-from chorez.scheduler.views import index
+from chorez.scheduler import views
 
 urlpatterns = [
-    url(r'^$', index),
+    url(r'^$', views.ScheduleView.as_view(), name='home'),
+    url(r'^chores$', views.ChoreList.as_view(), name='chores'),
+    url(r'^chores/new$', views.ChoreCreate.as_view(), name='create_chore'),
+    url(r'^chores/(?P<pk>\d+)$', views.ChoreEdit.as_view(), name='chore'),
+    url(r'^chores/(?P<pk>\d+)/delete$', views.ChoreDelete.as_view(), name='chore_delete'),
 
     url(r'^admin/', admin.site.urls),
 ]

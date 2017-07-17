@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+    <title>{% block title %}Chorez{% endblock %}</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'chores' %}">Chores</a></li>
+                    <li><a href="{% url 'create_chore' %}">New Chore</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% block content %}{% endblock %}
+    </body>
+</html>

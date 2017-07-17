@@ -189,7 +189,7 @@ class Schedule:
 
 
 # Chores, in order of priority
-CHORES =  [
+CHORES = [
     ChoreGroup('Laundry', 1, [
         Chore('Run laundry', 15),
         Chore('Hang up laundry', 15),

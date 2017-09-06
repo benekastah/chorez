@@ -40,11 +40,14 @@ class Chore(models.Model):
         (datetime.timedelta(minutes=10), '10 minutes'),
         (datetime.timedelta(minutes=15), '15 minutes'),
         (datetime.timedelta(minutes=30), '30 minutes'),
+        (datetime.timedelta(minutes=45), '45 minutes'),
+        (datetime.timedelta(minutes=60), '60 minutes'),
     ))
     frequency = models.DurationField(choices=(
         (datetime.timedelta(days=1), 'Daily'),
         (datetime.timedelta(days=2), 'Every other day'),
-        (datetime.timedelta(days=3.5), 'Twice a week'),
+        (datetime.timedelta(days=7/3), 'Three times a week'),
+        (datetime.timedelta(days=7/2), 'Twice a week'),
         (datetime.timedelta(days=7), 'Weekly'),
         (datetime.timedelta(days=14), 'Every other week'),
         (datetime.timedelta(days=30), 'Monthly'),

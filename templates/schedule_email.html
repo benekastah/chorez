@@ -1,0 +1,21 @@
+Visit <a href="http://chorez.slapme.website">the website</a> for more.
+
+<table>
+{% for entry in schedule %}
+<tr>
+    <th colspan="2">
+        <h2>{{ entry.date }}</h2>
+    </th>
+</tr>
+{% for chore in entry.chores %}
+    <tr>
+        <td>
+            <a href="http://chorez.slapme.website{% url 'chore' chore.id %}">{{ chore.name }}</a>
+        </td>
+        <td style="text-align: center;">
+            {{ chore.minutes }}m
+        </td>
+    </tr>
+{% endfor %}
+{% endfor %}
+</table>

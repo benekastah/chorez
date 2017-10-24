@@ -2,3 +2,4 @@ venv/
 *.sqlite3
 __pycache__
 todo
+chorez/local_settings.py

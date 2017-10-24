@@ -1,0 +1,6 @@
+Visit http://chorez.slapme.website for more.
+
+{% for entry in schedule %}{{ entry.date }}
+{% for chore in entry.chores %}{{ chore.name }} ({{ chore.minutes }} minutes)
+{% endfor %}
+{% endfor %}

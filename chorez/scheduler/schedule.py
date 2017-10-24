@@ -1,7 +1,11 @@
+import logging
+
 from collections import defaultdict
 import datetime
 
 from chorez.scheduler.models import Chore, Person
+
+logger = logging.getLogger(__name__)
 
 
 def get_minutes(td):
@@ -28,7 +32,7 @@ def get_schedule(num_days=14):
             else:
                 availability[date] += get_minutes(person.weekday_availability)
 
-    print('availability: %r' % availability)
+    logger.info('availability: %r' % availability)
 
     chores = Chore.objects.order_by('last_done')
     chores_by_day = defaultdict(list)

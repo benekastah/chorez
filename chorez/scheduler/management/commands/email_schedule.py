@@ -15,7 +15,7 @@ class Command(BaseCommand):
         parser.add_argument('emails', nargs='+')
 
     def handle(self, *args, **options):
-        print('Sending to: %r' % options['emails'])
+        print('%s - Sending schedule to: %r' % (datetime.datetime.utcnow().isoformat(), options['emails']))
         context = {'schedule': get_schedule(7)}
         message = render_to_string('schedule_email.txt', context=context)
         html_message = render_to_string('schedule_email.html', context=context)

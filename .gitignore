@@ -4,3 +4,4 @@ __pycache__
 todo
 chorez/local_settings.py
 crontab.log
+logs/
